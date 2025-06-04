@@ -8,6 +8,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.content.Intent;
+import android.os.Handler;
 
 public class SpalshScreenActivity extends Activity {
 	 public void onAttachedToWindow() {
@@ -34,9 +36,15 @@ public class SpalshScreenActivity extends Activity {
         ImageView iv = (ImageView) findViewById(R.id.logo);
         iv.clearAnimation();
         iv.startAnimation(anim);
-        
-        
-        
+
+        // After the splash animations, launch the sign-in activity.
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(new Intent(SpalshScreenActivity.this, SignInActivity.class));
+                finish();
+            }
+        }, 3000);
     }
-   
+
 }
