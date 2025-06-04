@@ -3,5 +3,6 @@
 
     <string name="hello">Hello World, SpalshScreenActivity!</string>
     <string name="app_name">SpalshScreen</string>
+    <string name="sign_in">Sign in with Google</string>
 
 </resources>
